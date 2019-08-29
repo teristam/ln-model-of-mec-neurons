@@ -28,6 +28,8 @@ paramMat = nan(numFolds,numCol);
 for k = 1:numFolds
     fprintf('\t\t- Cross validation fold %d of %d\n', k, numFolds);
     
+    % testing set in each of the fold
+    % extract and contenate the testing set together
     % get test data from edges - each test data chunk comes from entire session
     test_ind  = [edges(k):edges(k+1)-1 edges(k+numFolds):edges(k+numFolds+1)-1 ...
         edges(k+2*numFolds):edges(k+2*numFolds+1)-1 edges(k+3*numFolds):edges(k+3*numFolds+1)-1 ...

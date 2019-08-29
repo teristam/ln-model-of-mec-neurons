@@ -2,7 +2,7 @@ function [posgrid, bins] = pos_map(pos, nbins, boxSize)
 
 % take the histogram
 
-bins = boxSize/nbins/2:boxSize/nbins:boxSize-boxSize/nbins/2;
+bins = boxSize/nbins/2:boxSize/nbins:boxSize-boxSize/nbins/2; %bin center
 
 % store grid
 posgrid = zeros(length(pos), nbins^2);
