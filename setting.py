@@ -17,3 +17,8 @@ binSize = 0.02*Fs #20ms
 theta_bin = 18
 position_bin = 20
 speed_bin = 18
+
+
+###################
+# VR
+trackLength = 200

@@ -2,6 +2,9 @@ import setting
 #don't use config to store your setting, it will cause conflict because snakemake is also using config
 
 # Aggregate data
+rule all:
+    input:'test/processing/binned_data.pkl'
+
 rule make_eeg:
     input: 
         [f'test/100_CH{x}.continuous' for x in range(1,setting.numChan+1)],
@@ -19,6 +22,12 @@ rule bin_data:
         'test/processing/position.npy',
         'test/spatial_firing.pkl'
     output:
-        'test//processing/binned_data.pkl'
+        'test/processing/binned_data.pkl'
     script:
         '01_binData.py'
+
+rule fit_model:
+    input:
+        'test/processing/binned_data.pkl'
+    output:
+        

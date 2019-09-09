@@ -37,9 +37,3 @@ np.save(output[0],rawSignal)
 d = OpenEphys.loadContinuousFast(input[-1])['data']
 np.save(output[1],d)
 
-#%%
-# d = OpenEphys.loadContinuousFast('test/100_CH2.continuous')['data']
-# h = signal.welch(d,fs=30000)
-# plt.plot(h[0][:10],h[1][:10])
-
-#%%

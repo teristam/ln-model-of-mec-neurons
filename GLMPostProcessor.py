@@ -328,7 +328,7 @@ def speed_map_1d(pos, nbins, sampleRate=50, maxSpeed=50,removeWrap=False):
     """bin and map the speed into one-hot vector
     
     Arguments:
-        pos {np.narray} -- position of the animal
+        pos {np.narray} -- position of the animal, 1d array
         nbins {int} -- number of bins
     
     Keyword Arguments:
@@ -381,7 +381,6 @@ def average_in_bin(position,binEdge,binSize):
     p = p.mean(axis=1)
     
     return p
-
     
 def plotRawTuningCurve(ax,datagrid,spiketrain_bin,response, vec):
     loc = np.argmax(datagrid, axis=1)
